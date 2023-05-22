@@ -4,8 +4,8 @@ const Form  = ()=> {
     return(
         <div className={style.todoform}>
             <form>
-                <input placeholder ="Add Todo Item"></input>
-               <button>Add</button>
+                <input className={style.todoinput} placeholder ="Add Todo Item"></input>
+               <button className={style.todobtn}>Add</button>
             </form>
         </div>
     )
