@@ -1,11 +1,21 @@
 import style from "../style.module.css";
 
-const Form  = ()=> {
+const Form  = ({todo, setTodo, todoList, setTodoList})=> {
+
+    const handleChange=(event)=>{
+        setTodo(event.target.value)
+        console.log(todo)
+    }
+    const handleSubmit = (event) =>{
+        event.preventDefault()
+        setTodoList([...todoList,todo])
+        console.log(todoList)
+    }
     return(
         <div className={style.todoform}>
-            <form>
-                <input className={style.todoinput} placeholder ="Add Todo Item"></input>
-               <button className={style.todobtn}>Add</button>
+            <form onSubmit={handleSubmit}>
+                <input value={todo} onChange={handleChange} className={style.todoinput} placeholder ="Add Todo Item"></input>
+               <button type='submit' className={style.todobtn}>Add</button>
             </form>
         </div>
     )
