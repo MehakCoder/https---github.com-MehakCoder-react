@@ -1,4 +1,5 @@
 import style from "../style.module.css";
+import shortid from 'shortid';
 
 const Form  = ({todo, setTodo, todoList, setTodoList})=> {
 
@@ -8,8 +9,7 @@ const Form  = ({todo, setTodo, todoList, setTodoList})=> {
     }
     const handleSubmit = (event) =>{
         event.preventDefault()
-        setTodoList([...todoList,todo])
-        console.log(todoList)
+        setTodoList([...todoList,{name:todo,id: shortid.generate()}])
     }
     return(
         <div className={style.todoform}>
