@@ -1,10 +1,10 @@
 import style from "../style.module.css";
 
-const Todo = () => {
+const Todo = ({todoItem}) => {
     return(
         <div>
-            <div className={style.todoitem}>
-                <h3 className={style.todoname}>Todo Item</h3>
+            <div className={style.todoItem}>
+                <h3 className={style.todoname}>{todoItem}</h3>
                 <button className={style.deletebtn}>Done</button>
             </div>
         </div>
