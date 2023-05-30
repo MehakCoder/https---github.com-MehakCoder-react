@@ -1,8 +1,9 @@
 import Todo from "./Todo"
 const Todolist=({todoList})=>{
     return(
-        <div>{todoList.map((todoItem)=>(
-            <Todo todoItem={todoItem}></Todo>
+        <div>
+            {todoList.map((todoItem)=>(
+            <Todo key={todoItem.id}  todoItem={todoItem}></Todo>
         ))}</div>
     )
 }
